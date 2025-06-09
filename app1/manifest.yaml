@@ -36,7 +36,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: minimal-ingress
+  name: app1
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
@@ -47,7 +47,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: "appa.daws82s.space"
+  - host: "app1.daws82s.space"
     http:
       paths:
       - pathType: Prefix
