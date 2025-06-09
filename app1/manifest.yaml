@@ -24,7 +24,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: nginx
+  name: app1
 spec:
   type: LoadBalancer
   selector: # labels are used as selectors
@@ -46,14 +46,15 @@ metadata:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:314146304089:certificate/d095163b-8397-4678-a249-75ff0aaba0b4
     alb.ingress.kubernetes.io/group.name: joindevops
 spec:
-  ingressClassName: nginx-example
+  ingressClassName: alb
   rules:
-  - http:
-    paths:
-    - path: /testpath
-      pahtType: Prefix
-      backend:
-        service:
-          name: test
-          port:
-            number: 80
+  - hosts: "appa.daws82s.space"
+    http:
+      paths:
+      - pahtType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: app1
+            port:
+              number: 80
