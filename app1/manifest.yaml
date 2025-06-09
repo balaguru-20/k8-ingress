@@ -48,10 +48,10 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - hosts: "appa.daws82s.space"
+  - host: "appa.daws82s.space"
     http:
       paths:
-      - pahtType: Prefix
+      - pathType: Prefix
         path: "/"
         backend:
           service:
